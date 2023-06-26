@@ -1,0 +1,2 @@
+model_checkpoint_path: "rnn_ts_model"
+all_model_checkpoint_paths: "rnn_ts_model"
