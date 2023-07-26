@@ -11,6 +11,8 @@ numpy = "*"
 scikit-learn = "*"
 matplotlib = "*"
 protobuf = "==3.20.1"
+gym = "*"
+pygame = "*"
 
 [dev-packages]
 
