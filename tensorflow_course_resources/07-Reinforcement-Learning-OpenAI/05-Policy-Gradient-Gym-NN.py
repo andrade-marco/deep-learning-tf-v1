@@ -125,7 +125,7 @@ with tf.Session() as sess:
             current_rewards = []
             current_gradients = []
 
-            observations = env.reset()
+            observations = env.reset()[0]
 
             # Only allow n amount of steps in game
             for step in range(max_game_steps):
@@ -134,7 +134,7 @@ with tf.Session() as sess:
                 action_val, gradients_val = sess.run([action, gradients], feed_dict={X: observations.reshape(1, num_inputs)})
 
                 # Perform Action
-                observations, reward, done, info = env.step(action_val[0][0])
+                observations, reward, done, truncated, info = env.step(action_val[0][0])
 
                 # Get Current Rewards and Gradients
                 current_rewards.append(reward)
